@@ -1,0 +1,19 @@
+{
+  "name": "project",
+  "authors": [
+    "Maxim Kasatkin <mvkasatkin@gmail.com>"
+  ],
+  "license": "ISC",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "normalize.css": "*",
+    "underscore": "*",
+    "vue": "^2"
+  }
+}
