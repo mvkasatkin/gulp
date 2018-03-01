@@ -1,7 +1,7 @@
 const gulp = require('gulp'),
     rimraf = require('rimraf'),
     rename = require('gulp-rename'),
-    rigger = require('gulp-rigger'),
+    rigger = require('gulp-rigger'), // todo https://www.npmjs.com/package/gulp-file-include
     stream = require('streamqueue'),
     concat = require('gulp-concat'),
     sass = require('gulp-sass'),
