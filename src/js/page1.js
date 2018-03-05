@@ -9,5 +9,3 @@ const Page1 = {
         });
     }
 };
-
-Page1.init();

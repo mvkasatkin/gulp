@@ -14,6 +14,8 @@
   "dependencies": {
     "normalize.css": "*",
     "underscore": "*",
-    "vue": "^2"
+    "vue": "^2",
+    "jquery": "^3",
+    "jquery-migrate": "^3"
   }
 }

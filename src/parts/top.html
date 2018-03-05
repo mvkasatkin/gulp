@@ -3,5 +3,11 @@
 <head >
     <meta charset="UTF-8" >
     <title >Title</title >
+    <!-- inject:css -->
+    <!-- endinject -->
+    <script type="text/javascript">
+        window.ready = function(callback){document.addEventListener("DOMContentLoaded", function(){ callback.call(window); })};
+        window.$ = function(){return { ready: window.ready }};
+    </script>
 </head >
 <body >

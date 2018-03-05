@@ -1,6 +1,11 @@
-//= parts/header.html
+//@include('parts/header.html')
 
 <div>page1</div>
 <div id="app">{{test}}, <vue-hello></vue-hello></div>
 
-//= parts/footer.html
+<script type="text/javascript">
+    $(document).ready(function(){
+        Page1.init();
+    });
+</script>
+//@include('parts/footer.html')
