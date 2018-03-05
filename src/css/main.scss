@@ -1,2 +1,4 @@
-@import "../../bower_components/normalize.css/normalize.css";
-//@import "parts";
+@import "_reset";
+@import "_base";
+@import "_common";
+@import "components/*";

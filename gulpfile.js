@@ -5,7 +5,8 @@ const gulp = require('gulp'),
     sass = require('gulp-sass'),
     beautify = require('gulp-html-beautify'),
     sourcemaps = require('gulp-sourcemaps'),
-    cssmin = require('gulp-minify-css'), // todo change to new gulp-cssmin
+    cleancss = require('gulp-clean-css'),
+    glob = require('gulp-sass-glob'),
     babel = require('gulp-babel'),
     strip = require('gulp-strip-comments'),
     useref = require('gulp-useref'),
@@ -36,7 +37,7 @@ const config = {
     src: {
         html: 'src/*.html',
         js: 'src/js/**/*.js',
-        css: 'src/css/*.scss',
+        css: 'src/css/main.scss',
         img: 'src/img/**/*.*',
         fonts: 'src/fonts/**/*.*',
         bower: 'bower_components/**/*.*',
@@ -60,7 +61,7 @@ const config = {
 
 gulp.task('clean', (cb) => { rimraf(config.clean, cb); });
 gulp.task('reload', reload);
-gulp.task('server', () => { browserSync(config.browser); return gulp.watch(config.watch, ['build'/*, 'reload'*/]); });
+gulp.task('server', () => { browserSync(config.browser); return gulp.watch(config.watch, ['build', 'reload']); });
 gulp.task('build:html', () => {
     return gulp.src(config.src.html)
         .pipe(include({prefix: '//@', basepath: '@file'}))
@@ -76,8 +77,9 @@ gulp.task('build:html', () => {
 gulp.task('build:css', () => {
     return gulp.src(config.src.css)
         .pipe(sourcemaps.init())
+        .pipe(glob())
         .pipe(sass())
-        .pipe(cssmin())
+        .pipe(cleancss())
         .pipe(sourcemaps.write())
         .pipe(gulp.dest(config.dist.css));
 });
