@@ -18,13 +18,13 @@ const gulp = require('gulp'),
 let production = false;
 const config = {
     assets: [
-        'css/main.css',
-        'js/bower_components/jquery/dist/jquery.js',
-        'js/bower_components/jquery-migrate/jquery-migrate.js',
-        'js/bower_components/vue/dist/vue.js',
-        'js/bower_components/underscore/underscore.js',
-        'js/vue/vue-hello.js',
-        'js/page1.js',
+        '../dist/css/main.css',
+        '../dist/js/bower_components/jquery/dist/jquery.js',
+        '../dist/js/bower_components/jquery-migrate/jquery-migrate.js',
+        '../dist/js/bower_components/vue/dist/vue.js',
+        '../dist/js/bower_components/underscore/underscore.js',
+        '../dist/js/vue/vue-hello.js',
+        '../dist/js/page1.js',
     ],
     dist: {
         html: '../dist/',
@@ -67,7 +67,7 @@ gulp.task('build:html', () => {
         .pipe(include({prefix: '//@', basepath: '@file'}))
         .pipe(inject(
             gulp.src(config.assets, {read: false}),
-            {ignorePath: 'dist', addRootSlash: false})
+            {ignorePath: '../dist', addRootSlash: false})
         )
         .pipe(beautify({indent_size: 4, preserve_newlines: false}))
         .pipe(gulpif(production, useref({searchPath: '../dist'})))

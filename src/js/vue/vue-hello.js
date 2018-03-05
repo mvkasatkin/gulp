@@ -1,6 +1,6 @@
 VueHello = {
     template: `
-    <p>{{greeting}}</p>
+    <div>{{greeting}}</div>
     `,
     data(){
         return {
